@@ -1,0 +1,50 @@
+To convert the provided entity-relationship model (ER model) into a relational diagram, we need to identify the entities, their attributes, and the relationships based on the image you referenced.
+
+Entities and Attributes:
+Hotel
+
+Attributes:
+Hotel_ID (Primary Key)
+Name
+Location
+Rating
+Room
+
+Attributes:
+Room_ID (Primary Key)
+Room_Number
+Type
+Price
+Hotel_ID (Foreign Key referencing Hotel)
+Customer
+
+Attributes:
+Customer_ID (Primary Key)
+First_Name
+Last_Name
+Phone
+Email
+Reservation
+
+Attributes:
+Reservation_ID (Primary Key)
+Start_Date
+End_Date
+Room_ID (Foreign Key referencing Room)
+Customer_ID (Foreign Key referencing Customer)
+Relationships:
+Hotel - Room: One hotel can have many rooms (1 to N relationship).
+Room - Reservation: A room can have multiple reservations, and each reservation pertains to one room (1 to N relationship).
+Customer - Reservation: A customer can make multiple reservations, but each reservation is made by one customer (1 to N relationship).
+Relational Diagram:
+Based on the above information, here is the relational diagram:
+
+Hotel (Hotel_ID, Name, Location, Rating)
+Room (Room_ID, Room_Number, Type, Price, Hotel_ID)
+Customer (Customer_ID, First_Name, Last_Name, Phone, Email)
+Reservation (Reservation_ID, Start_Date, End_Date, Room_ID, Customer_ID)
+Summary of Foreign Keys:
+Room references Hotel via Hotel_ID.
+Reservation references Room via Room_ID.
+Reservation references Customer via Customer_ID.
+This relational diagram effectively captures the relationships and attributes described in the entity-relationship model. You can now use this structure to create a database schema for managing hotel data.
